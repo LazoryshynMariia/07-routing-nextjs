@@ -7,7 +7,7 @@ import {
 import NotesClient from './Notes.client';
 
 interface NoteProps {
-    params: Promise<{slug: string}>
+    params: Promise<{ slug: string[]}>
 }
 
 export default async function Notes({params}: NoteProps) {
@@ -18,8 +18,8 @@ export default async function Notes({params}: NoteProps) {
     const tag = slug[0] === 'all' ? undefined : slug[0];
 
     await queryClient.prefetchQuery({
-    queryKey: ['notes', "", tag],
-    queryFn:() => getNotes("", 1, tag),
+    queryKey: ['notes',tag],
+    queryFn:() => getNotes(tag),
   })
 
     return (

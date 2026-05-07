@@ -9,7 +9,7 @@ interface NotesResponse {
     totalPages: number;
 };
 
-export const getNotes = async (searchText: string, page: number = 1, tag?: string ) => {
+export const getNotes = async (searchText?: string, page?: number = 1, tag?: string ) => {
     const res = await axios.get<NotesResponse>("/notes", {
         params: {
             page,
