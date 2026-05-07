@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/@modal/(.)notes/[id]/NotePreview.client.tsx"  ],
   "exclude": ["node_modules"]
 }
